@@ -31,7 +31,7 @@ def text_to_sequence(texts, vocab):
       else:
         sequence.append(vocab['<UNK>'])
     encoded_sequences.append(sequence)
-  return encoded_sequences
+  return encoded_sequences,X_tokens
 
 def pad_sequence(encoded_seq,seq_len = 50):
   pad_sequences =[]

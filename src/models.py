@@ -87,10 +87,16 @@ class BIGRUModel(nn.Module):
 
 
 class CNNModel(nn.Module):
-  def __init__(self,vocab_size, embedding_size, num_filters = 100):
+  def __init__(self,vocab_size, embedding_size, num_filters = 100, embedding_matrix = None):
     super().__init__()
 
-    self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx = 0)
+    if embedding_matrix is not None:
+      self.embedding = nn.Embedding.from_pretrained(
+        embedding_matrix,
+        freeze = False
+      )
+    else:
+      self.embedding = nn.Embedding(vocab_size, embedding_size, padding_idx = 0)
 
     #Convolutional Layers
     self.conv1 = nn.Conv1d(embedding_size, num_filters, kernel_size = 3)
