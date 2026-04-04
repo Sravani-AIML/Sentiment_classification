@@ -1,0 +1,9 @@
+# Ignore python cache
+**/__pycache__/
+*.pyc
+
+# Ignore large datasets and embeddings
+data/
+
+# Ignore local plots 
+*.png
