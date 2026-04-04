@@ -1,0 +1,3 @@
+Model,vocab_size,embedding_size,sequence_length,hidden_size,num_filters,num_layers,batch_size,num_epochs,Accuracy,Time
+CNN(Word2Vec),20002,100,250,-,100,1,64,15,89.60000000000001,2836.7962107658386
+CNN(glove),20002,100,250,-,100,1,64,15,89.12666666666667,2870.4570326805115
